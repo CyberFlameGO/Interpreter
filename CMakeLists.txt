@@ -3,4 +3,4 @@ project(TwitchInterpreter C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(TwitchInterpreter main.c hashmap.h hashmap.c)
+add_executable(TwitchInterpreter main.c hashmap.h hashmap.c token.h object.h ast.h lexer.h lexer.c)

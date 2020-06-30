@@ -203,6 +203,7 @@ int hashmap_put(map_t in, char* key, any_t value) {
     }
 
     //set the data
+    //TODO free each index from memory once done with it
     m->data[index].data = value;
     m->data[index].key = key;
     m->data[index].in_use = 1;

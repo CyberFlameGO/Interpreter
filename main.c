@@ -16,6 +16,7 @@ typedef struct _test_data_struct_s {
 
 } test_data;
 int main(void) {
+    test_hashmap();
     return 0;
 }
 
