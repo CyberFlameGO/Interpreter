@@ -6,7 +6,7 @@
 #define TWITCHINTERPRETER_LEXER_H
 
 #include <rpcndr.h>
-#include <windef.h>
+#include <stdbool.h>
 #include "token.h"
 
 typedef struct Lexer_t {
@@ -17,9 +17,9 @@ typedef struct Lexer_t {
 
 //skip whitespace because it doesn't need to be read
 void skipWhitespace();
-BOOL isDigit(char ch);
+bool isDigit(char ch);
 Token newToken(char* token, char ch);
-BOOL isCharacter(char ch);
+bool isCharacter(char ch);
 void readChar();
 char* peekChar();
 char* readIdentifier();

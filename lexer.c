@@ -93,7 +93,7 @@ void skipWhitespace() {
         readChar();
 }
 
-BOOL isCharacter(char ch) {
+bool isCharacter(char ch) {
     return 'a' <= ch && ch <= 'z' || 'A' <= ch && 'Z' <= ch || ch == "_";
 }
 
@@ -111,11 +111,11 @@ void readChar() {
 
 char* peekChar() {
     if (lexer.position >= sizeof(lexer.input))
-        return NULL;
+        return "";
     return &lexer.input[lexer.position];
 }
 
-BOOL isDigit(char ch) {
+bool isDigit(char ch) {
     return '0' <= ch && ch <= '9';
 }
 
