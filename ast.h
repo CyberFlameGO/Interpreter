@@ -40,7 +40,8 @@ typedef struct ArrayLiteral_t {
 
 
 typedef struct Program_t {
-    Statement statements; //todo assignt his to memory and handle it properly;
+    int dummy;
+    Statement statements[]; //todo assignt his to memory and handle it properly;
 } Program;
 
 typedef struct Identifier_t {
@@ -83,7 +84,7 @@ typedef struct PrefixExpression_t {
 } PrefixExpression;
 
 typedef struct InfixExpression_t {
-    Token token;
+    char *token;
     Expression left;
     char* oper;
     Expression right;
