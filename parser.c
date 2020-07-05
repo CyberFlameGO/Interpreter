@@ -56,10 +56,12 @@ void nextParserToken(void) {
 Program parseProgram(void) {
     Program program;
     Statement statement;
-    program.statements[0] = statement;
+    int position = 0;
 
-    //todo ^ fix that
-
+    if (program.statements[position].node.string != NULL && program.statements[position].node.tokenLiteral != NULL) {
+        program.statements[position] = statement;
+        position++;
+    }
     while(parser.currentToken != EOF) {
         parseStatement();
 
