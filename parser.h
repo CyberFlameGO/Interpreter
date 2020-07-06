@@ -52,19 +52,19 @@ bool curTokenIs(char* token);
 bool peekTokenIs(char* token);
 bool expectPeek(char* token);
 Parser newParser(Lexer lexer);
-Expression parseArrayLiteral(void);
+ArrayLiteral parseArrayLiteral(void);
 map_t parseExpressionList(char* end); //todo build map for this and return map
-Expression parseStringLiteral(void);
-Expression parseCallExpression(void);
+StringLiteral parseStringLiteral(void);
+CallExpression parseCallExpression(any_t function);
 map_t parseCallArguments(void);
-Expression parseFunctionLiteral(void);
+FunctionLiteral parseFunctionLiteral(void);
 map_t parseFunctionParameters(void);
-Expression parseIfExpression(void);
+IfExpression parseIfExpression(void);
 BlockStatement parseBlockStatement(void);
 Expression parseGroupExpression(void);
-Expression parseBoolean(void);
-Expression parsePrefixExpression(void);
-Expression parseIdentifier(void);
+Boolean parseBoolean(void);
+PrefixExpression parsePrefixExpression(void);
+Identifier parseIdentifier(void);
 ReturnStatement parseReturnStatement(void);
 
 #endif //TWITCHINTERPRETER_PARSER_H

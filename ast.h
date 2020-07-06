@@ -45,7 +45,8 @@ typedef struct Program_t {
 } Program;
 
 typedef struct Identifier_t {
-
+    Token token;
+    char* value;
 } Identifier;
 
 
@@ -98,19 +99,19 @@ typedef struct Boolean_t {
 typedef struct IfExpression_t {
     Token token;
     Expression condition;
-    //todo consequence and alternative - blockstatement
+    BlockStatement consequence;
 } IfExpression;
 
 
 typedef struct FunctionLiteral_t {
     Token token;
     BlockStatement body;
-    Identifier parameters[];
+    map_t parameters[];
 } FunctionLiteral;
 
 typedef struct CallExpression_t {
     Token token;
-    Expression function;
+    any_t function;
     Expression arguments[];
 } CallExpression;
 
